@@ -8,4 +8,4 @@
 
 # Run app
 1) Run => npm install
-2) RUn => ng serve
+2) Run => ng serve
