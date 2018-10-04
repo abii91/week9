@@ -1,0 +1,18 @@
+<ul id="messages">
+  <div *ngFor="let message of messages; let i = index">
+    <div class="container" *ngIf="currentUser == message.sender">
+      <img src="https://openclipart.org/download/247324/abstract-user-flat-1.svg" alt="Avatar">
+      <span class="time-left">{{message.sender}}</span>
+      <p>{{message.text}}</p>
+    </div>
+
+    <div class="container darker" *ngIf="currentUser != message.sender" >
+      <img src="https://openclipart.org/download/247324/abstract-user-flat-1.svg" alt="Avatar" class="right">
+      <span class="time-right">{{message.sender}}</span>
+      <p>{{message.text}}</p>
+    </div>
+  </div>
+</ul>
+<form name="messageForm" (ngSubmit)="sendMessage(message)">
+  <input  [(ngModel)]="message" name="message" id="m" autocomplete="off" /><button>Send</button>
+</form>
